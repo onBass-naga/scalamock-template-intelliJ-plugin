@@ -1,17 +1,40 @@
-<idea-plugin>
-    <id>com.area-b.scalamock-template-plugin</id>
-    <name>ScalaMock Template</name>
-    <version>0.1.0</version>
-    <vendor email="naga@area-b.com" url="https://github.com/onBass-naga/scalamock-template-intelliJ-plugin">AreaB</vendor>
+<idea-plugin url="https://www.jetbrains.com/idea">
 
-    <idea-version since-build="173.0" />
+    <name>ScalaMock Template</name>
+
+    <id>com.area-b.scalamock-template-plugin</id>
+
+    <description>
+    <![CDATA[
+        <p>Generating templates for ScalaMock.</p><br/>
+        <p>Actions are available under the Edit menu, and a template generated is copied into clipboard.</p>
+    ]]>
+    </description>
+
+    <change-notes>
+    <![CDATA[
+	<p>
+	    <p>
+	        <h4>Version 1.0</h4>
+	        Added following actions:
+	        <ul>
+	            <li>Generate Mock Template</li>
+	            <li>Generate Stub Template</li>
+	        </ul>
+
+	    </p>
+	</p>
+    ]]>
+    </change-notes>
+
+    <version>1.0</version>
+
+    <vendor url="https://github.com/onBass-naga/scalamock-template-intelliJ-plugin" email="naga@area-b.com" />
 
     <!--<depends>com.intellij.modules.java</depends>-->
     <depends>com.intellij.modules.lang</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
+    <idea-version since-build="183" until-build="183.*"/>
 
     <actions>
         <group id="ScalaMockTemplate.Group.Main" text="ScalaMock Template"
@@ -35,14 +58,8 @@
         </group>
     </actions>
 
-
-    <description><![CDATA[
-        <p>Generating templates for ScalaMock.</p><br/>
-        <p>Actions are available under the Edit menu, and a template generated is copied into clipboard.</p>
-    ]]></description>
-
-    <!--<change-notes><![CDATA[-->
-    <!--]]>-->
-    <!--</change-notes>-->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
 
 </idea-plugin>
