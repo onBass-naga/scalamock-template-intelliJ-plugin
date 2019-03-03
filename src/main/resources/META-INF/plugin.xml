@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.area-b.scalamock-template-plugin</id>
+    <name>ScalaMock Template</name>
+    <version>0.1.0</version>
+    <vendor email="naga@area-b.com" url="https://github.com/onBass-naga/scalamock-template-intelliJ-plugin">AreaB</vendor>
+
+    <idea-version since-build="173.0" />
+
+    <!--<depends>com.intellij.modules.java</depends>-->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="ScalaMockTemplate.Group.Main" text="ScalaMock Template"
+               description="Group of ScalaMockTemplate"
+               popup="true">
+            <add-to-group group-id="EditMenu" anchor="last"/>
+
+            <action id="ScalaMockTemplate.Mock" class="MockTemplateAction" text="Mock Template"
+                    description="Illustrates how to plug an action in" />
+            <action id="ScalaMockTemplate.Stub" class="StubTemplateAction" text="Stub Template"
+                    description="Illustrates how to plug an action in" />
+        </group>
+
+        <group id="MyPlugin.ScalaMock" text="ScalaMock template"
+               description="ScalaMock menu"
+               popup="false">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+
+            <separator/>
+            <reference ref="ScalaMockTemplate.Group.Main"/>
+        </group>
+    </actions>
+
+
+    <description><![CDATA[
+        <p>Generating templates for ScalaMock.</p><br/>
+        <p>Actions are available under the Edit menu, and a template generated is copied into clipboard.</p>
+    ]]></description>
+
+    <!--<change-notes><![CDATA[-->
+    <!--]]>-->
+    <!--</change-notes>-->
+
+</idea-plugin>

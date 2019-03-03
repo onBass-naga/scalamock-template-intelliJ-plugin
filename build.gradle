@@ -1,0 +1,58 @@
+buildscript {
+    ext {
+        scalaVersion = "2.12.7"
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.3.11"
+//    id "com.github.maiflai.scalatest" version "0.24"
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+apply plugin: 'scala'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.scala-lang:scala-library:${scalaVersion}"
+    // https://mvnrepository.com/artifact/org.scalatest/scalatest
+    testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.6'
+    // https://mvnrepository.com/artifact/org.scalamock/scalamock
+    testCompile group: 'org.scalamock', name: 'scalamock_2.12', version: '4.1.0'
+//    testRuntime 'org.pegdown:pegdown:1.4.2'
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+wrapper {
+    gradleVersion = '4.10.2'
+}
+
+intellij {
+    version '2018.3'
+//    plugins 'coverage' //Bundled plugin dependencies
+    pluginName 'plugin_name_goes_here'
+}
+
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
